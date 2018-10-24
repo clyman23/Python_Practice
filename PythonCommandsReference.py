@@ -213,9 +213,84 @@ time.clock()
     Time begins from the first call to time.clock()
 '''
 
+'''-----Anonymous Functions-----
+Created using lambda keyword
+Can take any number of arguments but return just one value as an expression
+Cannot contain commands or multiple expressions
+Cannot be a direct call to print because it requires an expression
+Have their own local namespace
+    Cannot access variables other than those in their parameter list and the 
+    global namespace
+Not equivalent to inline statements in C/C++
 
-'''-----File import/read/write/etc-----'''
-'''!curl "url" -o output.txt''' #to grab file from internet
+Syntax:
+    lambda [arg1 [,arg2, ... argn]]:expression
+    
+Ex:
+    sum = lambda arg1, arg2: arg1+arg2
+    print("Value of total is: " + sum(10,20))
+Output is "Value of total is: 30"
+'''
+
+'''-----Modules-----
+Python searches for a module in the following order:
+    - The current directory
+    - Each directory in PYTHONPATH
+    - Each directory in the default path
+    Search path is stored in variable sys.path
+dir(module) returns a sorted list of all the modules, variables, and functions in module
+globals() and locals() returns all the variables in global and local namespace
+    returned as dict
+    if locals() called within a function, it will return all the names that can be accessed 
+    locally from that function
+    if globals() called within a function, it will return all the names that can be accessed
+    globally from that function 
+reload(module) re-imports the module
+'''
+
+'''-----Files I/O-----
+In Python 2, there is a difference between input() and raw_input()
+This difference has been removed in Python 3 and both store the input as a string
+In Python 2, input() treats the input as a valid Python expression
+Different modes for opening a file:
+    r - read; file pointer at beginning of file
+    rb - reading in binary format; file pointer at beginning of file
+    r+ - reading and writing; file pointer at beginning
+    rb+ - reading and writing binary; file pointer at beginning
+    w - writing; overwrites file if it exists
+    wb - writing binary
+    w+ - writing and reading
+    wb+ - writing and reading binary
+    a - appending; file pointer at end of file; creates new file if file DNE
+    ab - appending binary
+    a+ - appending and reading
+    ab+ - appending and reading binary
+Attributes of file object:
+    file.closed - true if file is closed
+    file.mode - returns access mode with which file was opened
+    file.name - returns name of file
+    file.softspace - false if space explicity required with print
+tell() 
+    method returns the current position within the file
+seek(offset[,from])
+    changes position within file
+    offset = number of bytes to move
+    from = reference position to move from
+        0 = beginning of file
+        1 = current position
+        2 = end of file
+os.rename(old_filename, new_filename)
+    self-explanatory
+os.remove(filename)
+    also self-explanatory
+os.mkdir(blah)
+os.chdir(blah)
+os.getcwd()
+os.rmdir(blah)
+
+!curl "url" -o output.txt
+    grab file from internet
+''' 
 
 
 
