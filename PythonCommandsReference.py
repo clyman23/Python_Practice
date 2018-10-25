@@ -292,6 +292,73 @@ os.rmdir(blah)
     grab file from internet
 ''' 
 
+'''-----Exceptions-----
+Handles unexpected errors in program; adds debugging capability
+Standard exceptions:
+    Exception - base class for all exceptions
+    StopIteration - Raised when the next() method of iterator does not point to any object
+    SystemExit - Raised by the sys.exit() function
+    StandardError - Base class for all built-in exceptions except StopIteration and SystemExit
+    ArithmeticError - Base class for all errors that occur for numeric calculation
+    OverflowError - Raised when a calculation exceeds max limit for a numeric type
+    FloatingPointError - Raised when a floating point calc fails
+    ZeroDivisionError - Raised when div or modulo by 0 takes place for all numeric types
+    AssertionError - Raised in case of failure of the Assert statement
+    AttributeError - Raise in case of failure of attribute reference or assignment
+    EOFError - Raised when there is no input from raw_input() or input() and the end of file is reached
+    ImportError - Raised when an import statement fails
+    KeyboardInterrupt - Raised when user interrupts program execution (usually with ctrl+c)
+    LookupError - Base class for all lookup errors
+    IndexError - Raised when index not found in sequence
+    KeyError - Raised when specified key not found in dict
+    NameError - Raised when identified is not found in local or global namespace
+    UnboundLocalError - Raised when trying to access local var in a func or method but no value assigned to it
+    EnvironmentError - Base class for all exceptions that occur outside the Python environment
+    IOError - Raised when input/output operation fails, such as print statement or the open() function
+    when trying to open a file that does not exist
+    SyntaxError - Raised when error in Python syntax
+    IndentationError - Raised when indentation not specified properly
+    SystemError - Riased when interpreter finds internal problem; when this error encountered
+    Python interpreter does not exit
+    SystemExit - Raised when Python interpreter is quit by using the sys.exit() func; if not
+    handled in the code, causes the interpreter to exit
+    TypeError - Raised when operation or func is attempted that is invalid for the specified data type
+    ValueError - Raised when built-in func for a data type has the valid type of arguments, 
+    but the argurments have invalid values specified
+    RuntimeError - Raised when a generated error does not fall into a category
+    NotImplementedError - Raised when an abstract method that needs to be implemented in an
+    inherited class is not actually implemented
+
+Assertion:
+    Sanity-check that can be turned on or off while testing a program
+    Often placed at the start of a func to check for valid input and after a func call
+    to check for valid output
+    
+    assert Expression[, Arguments]
+    
+    Python evaluates expression and raises AssertionError if Expression is False
+    Arguments is used as the argument for the AssertionError
+
+Exceptions:
+try...except...else
+A try statement can have multiple except statements
+Code is else block runs if code in try block does not raise an exception
+    Therefore, the else block is good for code that does not need "protection" from try
+Can use except block without defining which exception but is bad practice
+Can also use except block with multiple exceptions at once
+finally block:
+    place to put any code that must execute whether try raises exception or not
+Can use:
+    except ExceptionType, Argument:
+        This will store info about the exception in Argument
+
+Raising Exceptions:
+raise [Exception [, args [, traceback]]]
+    Exception - type of exception
+    args - value for exception argument
+    traceback - traceback object for the exception (rarely used)
+
+'''
 
 
 
