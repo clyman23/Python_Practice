@@ -360,6 +360,44 @@ raise [Exception [, args [, traceback]]]
 
 '''
 
+'''-----Classes-----
+Accessing attributes
+    getattr(object, name)
+    hasattr(object, name) - check if attribute exist or not
+    setattr(object, name, value)
+    delattr(object, name)
+    
+Built-in class attributes
+    __dict__ - dictionary containing class's namespace
+    __doc__ - class documentation string or none, if undefined
+        The doc string is the comments directly after the class line in code
+    __name__ - class name
+        Python 3: call as __class__.__name__
+    __module__ - module name in which the class is defined
+    __bases__ - possibly empty tuple containing base classes in the order
+    of their occurence in the base class list
+    
+Garbage Collection
+    Python deletes unneeded objects automatically to free up space
+    Garbage collection - process by which Python periodically reclaims blocks
+    of memory that no longer are in use
+    Triggered when object's reference count reaches 0
+    Reference count increases when it is assigned a new name or placed in a container
+    (list, tuple, dict)
+    Reference count decreases when it's deleted with del, reference is reassigned, 
+    or its reference goes out of scope
+    Class can invoke __del__(), called a destructor, that is invoked when instance
+    is about to be destroyed
+    
+Class Inheritance
+    Child class inherits attributes of parent class
+    Can use those attributes as if they were defined in child class
+    Child class can also override data members and methods from parent
+    issubclass(sub, sup)
+        True if sub is a subclass of sup
+    isinstance(obj, Class) 
+        True if obj is instance of Class or is instance of subclass of Class
+'''
 
 
 
