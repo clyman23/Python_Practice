@@ -397,7 +397,53 @@ Class Inheritance
         True if sub is a subclass of sup
     isinstance(obj, Class) 
         True if obj is instance of Class or is instance of subclass of Class
+        
+Overloading Operators
+    Can define an __add__() function so that you can add two instances of a class
+    
+Data Hiding
+    if an attribute is named with a leading __ (double _), then it cannot be viewed
+    Can only be accessed by object._className__attributeName
 '''
 
+'''-----Regular Expressions-----
+Special sequence of characters that helps you match or find other strings or
+sets of strings, using a special syntax held in a pattern
+Regular expressions are widely used in UNIX world
+Module re provides full support for Perl-like regular expressions in Python
+re module raises exception re.error if error occurs
 
+Match function
+Function attempts to match RE pattern to string with optional flages
+re.match(pattern, string, flags = 0)
+pattern - regular expression to be matched
+string - string that would be searched to match pattern
+flags - can specify different flags using bitwise OR
+
+Ex:
+import re
+line = "Cats are smarter than dogs"
+matchObj = re.match( r'(.*) are (.*?) .*', line, re.M|re.I)
+if matchObj:
+    print("matchObj.group() : ", matchObj.group())
+    print("matchObj.group(1) : ", matchObj.group(1))
+    print("matchObj.group(2) : ", matchObj.group(2))
+else:
+    print("No match!!")
+    
+re.match() check for match at beginning of string while re.search() checks for 
+match anywhere in string
+
+Can search and replace using
+re.sub(pattern, replace, string, max=0)
+
+More references at: https://www.tutorialspoint.com/python/python_reg_expressions.htm
+'''
+
+'''-----CGI: Common Gateway Interface-----
+Set of standards that define how information is exchanged b/w the web server
+and a custom script
+
+
+'''
 
