@@ -406,6 +406,38 @@ Data Hiding
     Can only be accessed by object._className__attributeName
 '''
 
+'''-----Iterators-----
+Lists, tuples, dictionaries, strings, and sets are all iterable objects
+Can get an iterator by using:
+    thing = iter(object)
+Can then get the next value of the iterator by using:
+    next(thing)
+    next(thing)
+    ...
+Can get each value using:
+    for x in thing:
+        print(thing)
+
+Can create an object/class as an iterator, must implement methods:
+    __iter__() - must return the iterator object itself
+    __next__() - must return the next item in the sequence
+    
+Example - will return 1,2,3,4,5,...
+class MyNumbers:
+    def __iter__(self):
+        self.a = 1
+        return self
+    def __next__(self):
+        x = self.a
+        self.a += 1
+        return x
+
+Can use if self.a <= some_number
+and else: raise StopIteration
+to prevent next() from returning a new value "forever"
+'''
+
+
 '''-----Regular Expressions-----
 Special sequence of characters that helps you match or find other strings or
 sets of strings, using a special syntax held in a pattern
