@@ -20,27 +20,27 @@ class Solution:
                     pass
                 elif target - nums[i] == nums[j]:
                     return i, j
+                
     def twoSum_twoPassHashTable(self, nums, target):
-        hash_map = {}
-        for i in range(0,len(nums)):
-            hash_map[nums[i]] = i
-        for i in range(0,len(nums)):
-            complement = target - nums[i]
-            if complement in hash_map and hash_map.get(complement) != i:
-                return i, hash_map.get(complement)
+        hash_map = {key:i for i,key in enumerate(nums)}
+        for i in nums:
+            complement = target - i
+            if complement in hash_map.keys() and \
+            hash_map.get(complement) != hash_map.get(i):
+                return hash_map.get(i), hash_map.get(complement)
         return "Error"
     
     def twoSum_onePassHashTable(self, nums, target):
         hash_map = {}
-        for i in range(0,len(nums)):
-            complement = target - nums[i]
+        for i in nums:
+            complement = target - i
             if complement in hash_map:
-                return hash_map.get(complement), i
-            hash_map[nums[i]] = i
-        return "Error"
+                return hash_map.get(complement), nums.index(i)
+            hash_map[i] = nums.index(i)
+        return 'Error'
 
 nums = [1,2,3,19,5,64,6]
-target = 5
+target = 67
 
 print(Solution().twoSum_bruteForce(nums, target))
 print(Solution().twoSum_twoPassHashTable(nums, target))
