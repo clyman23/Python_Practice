@@ -30,7 +30,7 @@ class Solution:
     def convert(self):
         values = {'i':1, 'v':5, 'x':10, 'l':50, 'c':100, 'd':500, 'm':1000}
         subtract = {'iv':4, 'ix':9, 'xl':40, 'xc':90, 'cd':400, 'cm':900}
-        numerals = list(self.roman)
+        numerals = list(self.roman.lower())
         length = len(self.roman)
         number = 0
         next_char = ''
